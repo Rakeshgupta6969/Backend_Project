@@ -1,0 +1,16 @@
+{
+  "name": "realbackend",
+  "version": "1.0.0",
+  "description": "This is important Project regarding your Learning",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Backend",
+    "and",
+    "dedication"
+  ],
+  "author": "Rakesh Gupta",
+  "license": "ISC"
+}
