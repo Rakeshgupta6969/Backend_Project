@@ -72,7 +72,7 @@ userSchema.pre("save" , async function (next){   // here we apply the concept of
      if(!this.isModified("password")) return next();  // this is all about the password encryption // changing the data into the database.
 
 
-    this.password = bcrypt.hash(this.password,10);
+    this.password =  await bcrypt.hash(this.password,10);
      next();
 })
 
@@ -127,4 +127,5 @@ userSchema.methods.isCorrectPassword = async function (password){  // here we ve
 
 
 
-export const User  = mongoose.model("User",userSchema);
+ const User  = mongoose.model("User",userSchema);
+ export {User}
