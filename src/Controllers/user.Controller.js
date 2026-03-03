@@ -63,12 +63,14 @@ const registerUser = asyncHandler(async (req,res) =>{
    const coverImageLocalPath  =  req.files?.coverImage?.[0]?.path;
 
 
-   if(avatarLocalPath){
+   if(!avatarLocalPath){
       throw new ApiError(400,"Avatar is required to full fill the requirement")
    }
       
    
    // now upload the avatar ans coverImage on the cloudinary.
+
+   // console.log("Avatar path:", avatarLocalPath);
 
    const avatar =    await  uploadOnCloudinary(avatarLocalPath); // during the upload of the file it take time
    const coverImage = await  uploadOnCloudinary(coverImageLocalPath);// again it take some time to  upload.
